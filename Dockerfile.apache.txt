@@ -1,0 +1,6 @@
+FROM ubuntu:20.04 
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=America/New_York
+RUN apt update &&  apt install -y apache2 
+EXPOSE 80
+CMD [ "apache2ctl" , "-D", "FOREGROUND" ]
